@@ -2,6 +2,8 @@ import './sidebar.css'
 import { RssFeed  , Chat, PlayCircle , Group , Bookmark , HelpOutline,
   WorkOutline , Event , School
 } from '@mui/icons-material';
+import { Users } from '../../dummyData';
+import CloseFriend from '../closeFriend/CloseFriend';
 
 
 export default function Sidebar() {
@@ -55,30 +57,11 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More</button>
         <hr className='sidebarHr' />
         <ul className="sidebarFriendlist">
-          <li className="sidebarFriend">
-            <img className="sidebarFriendImg" src="assets/person/2.jpeg" alt="" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
+         {Users.map(u=>(
+          <CloseFriend key={u.id} user={u} />
+         ))}
 
-          <li className="sidebarFriend">
-            <img className="sidebarFriendImg" src="assets/person/2.jpeg" alt="" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-
-          <li className="sidebarFriend">
-            <img className="sidebarFriendImg" src="assets/person/2.jpeg" alt="" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-
-          <li className="sidebarFriend">
-            <img className="sidebarFriendImg" src="assets/person/2.jpeg" alt="" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-
-          <li className="sidebarFriend">
-            <img className="sidebarFriendImg" src="assets/person/2.jpeg" alt="" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
+         
         </ul>
       </div>
     </div>
